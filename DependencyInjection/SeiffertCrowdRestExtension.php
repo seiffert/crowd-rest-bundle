@@ -22,9 +22,9 @@ class SeiffertCrowdRestExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('ps.crowd.application.name', $config['application']['name']);
-        $container->setParameter('ps.crowd.application.password', $config['application']['password']);
-        $container->setParameter('ps.crowd.url', $config['url']);
+        $container->setParameter('seiffert.crowd.application.name', $config['application']['name']);
+        $container->setParameter('seiffert.crowd.application.password', $config['application']['password']);
+        $container->setParameter('seiffert.crowd.url', $config['url']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');

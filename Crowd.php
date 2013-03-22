@@ -5,6 +5,7 @@ namespace Seiffert\CrowdRestBundle;
 use Seiffert\CrowdRestBundle\Crowd\AuthResource;
 use Seiffert\CrowdRestBundle\Crowd\UserInterface;
 use Seiffert\CrowdRestBundle\Crowd\UserResource;
+use Seiffert\CrowdRestBundle\Exception\UserNotFoundException;
 
 class Crowd
 {

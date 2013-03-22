@@ -2,6 +2,8 @@
 
 This bundle provides a simple API for Atlassian Crowd's REST API.
 
+[![Build Status](https://travis-ci.org/seiffert/crowd-rest-bundle.png?branch=master)](https://travis-ci.org/seiffert/crowd-rest-bundle)
+
 ## Installation
 
 Require the package via composer:

@@ -110,7 +110,7 @@ class AuthResourceTest extends \PHPUnit_Framework_TestCase
     /**
      * @return Response|\PHPUnit_Framework_MockObject_MockObject
      */
-    private function createMockResponse()
+    public function createMockResponse()
     {
         return $this->getmock('Guzzle\Http\Message\Response', array(), array(), '', false);
     }

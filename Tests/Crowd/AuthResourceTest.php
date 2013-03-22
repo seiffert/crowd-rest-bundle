@@ -48,7 +48,7 @@ class AuthResourceTest extends \PHPUnit_Framework_TestCase
         $that = $this;
         $request = $this->createMockRequest(
             function ($request) use ($that) {
-                return $this->throwException(
+                return $that->throwException(
                     ClientErrorResponseException::factory($request, $that->createClientErrorResponse(400))
                 );
             }

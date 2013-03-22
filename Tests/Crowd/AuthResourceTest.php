@@ -116,7 +116,7 @@ class AuthResourceTest extends \PHPUnit_Framework_TestCase
      * @param int $status
      * @return Response|\PHPUnit_Framework_MockObject_MockObject
      */
-    private function createClientErrorResponse($status)
+    public function createClientErrorResponse($status)
     {
         $response = $this->createMockResponse();
 

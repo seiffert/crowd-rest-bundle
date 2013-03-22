@@ -1,0 +1,14 @@
+{
+    "name": "seiffert/crowd-rest-bundle",
+    "description": "This bundle provides a simple API for Atlassian Crowd's REST API.",
+    "version": "1.0.0",
+    "license": "CC-BY-SA-3.0",
+    "autoload": {
+        "psr-0": { "Seiffert\\CrowdRestBundle": "" }
+    },
+    "target-dir": "Seiffert/CrowdRestBundle",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.2.0"
+    }
+}

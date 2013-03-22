@@ -1,0 +1,42 @@
+parameters:
+    ps.crowd.class: Seiffert\CrowdRestBundle\Crowd
+    ps.crowd.resource.user.class: Seiffert\CrowdRestBundle\Crowd\UserResource
+    ps.crowd.resource.auth.class: Seiffert\CrowdRestBundle\Crowd\AuthResource
+    ps.crowd.mapper.user.class: Seiffert\CrowdRestBundle\Crowd\UserMapper
+    ps.crowd.http_client.class: Guzzle\Http\Client
+    ps.crowd.http_client.curl_auth_plugin.class: Guzzle\Plugin\CurlAuth\CurlAuthPlugin
+
+services:
+    ps.crowd:
+        class: %ps.crowd.class%
+        arguments:
+            - @ps.crowd.resource.user
+            - @ps.crowd.resource.auth
+
+    ps.crowd.resource.user:
+        class: %ps.crowd.resource.user.class%
+        arguments:
+            - @ps.crowd.http_client
+            - @ps.crowd.mapper.user
+
+    ps.crowd.resource.auth:
+        class: %ps.crowd.resource.auth.class%
+        arguments:
+            - @ps.crowd.http_client
+
+    ps.crowd.mapper.user:
+        class: %ps.crowd.mapper.user.class%
+
+    ps.crowd.http_client:
+        class: %ps.crowd.http_client.class%
+        arguments:
+            - %ps.crowd.url%
+        calls:
+            - [ 'addSubscriber', [ @ps.crowd.http_client.curl_auth_plugin ]]
+            - [ 'setDefaultHeaders', [ { 'Content-Type': 'application/json', 'Accept': 'application/json' } ]]
+
+    ps.crowd.http_client.curl_auth_plugin:
+        class: %ps.crowd.http_client.curl_auth_plugin.class%
+        arguments:
+            - %ps.crowd.application.name%
+            - %ps.crowd.application.password%

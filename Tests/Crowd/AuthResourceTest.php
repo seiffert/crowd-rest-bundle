@@ -45,10 +45,11 @@ class AuthResourceTest extends \PHPUnit_Framework_TestCase
 
     public function testIsAuthenticationValidInvalidCredentials()
     {
+        $that = $this;
         $request = $this->createMockRequest(
-            function ($request) {
+            function ($request) use ($that) {
                 return $this->throwException(
-                    ClientErrorResponseException::factory($request, $this->createClientErrorResponse(400))
+                    ClientErrorResponseException::factory($request, $that->createClientErrorResponse(400))
                 );
             }
         );

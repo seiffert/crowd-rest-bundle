@@ -9,7 +9,7 @@
     "target-dir": "Seiffert/CrowdRestBundle",
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.2.0",
+        "symfony/symfony": ">=2.2.0,<2.3",
         "guzzle/guzzle": "*"
     },
     "require-dev": {

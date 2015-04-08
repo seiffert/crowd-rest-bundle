@@ -1,3 +1,7 @@
 # Symfony directories
 vendor/*
 coverage
+
+# Build directories.
+build
+composer.lock

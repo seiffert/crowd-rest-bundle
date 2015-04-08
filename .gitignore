@@ -4,3 +4,4 @@ coverage
 
 # Build directories.
 build
+composer.lock
